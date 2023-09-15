@@ -52,7 +52,7 @@ const savedExpense = (payload, userId) => (dispatch) => {
   dispatch(upLoadReq());
   const newPayload = { ...payload, userId };
   axios
-    .post("https://gor1f.sse.codesandbox.io/expences", newPayload)
+    .post("https://4k7ryd.sse.codesandbox.io/expences", newPayload)
     .then((res) => {
       res = res.status;
       dispatch(upLoadSucc());

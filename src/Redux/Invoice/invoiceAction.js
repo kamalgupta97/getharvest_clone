@@ -122,7 +122,7 @@ export const getTaskTimer = (payload) => (dispatch) => {
 export const getProjectData = (payload) => (dispatch) => {
   dispatch(getProjectRequest());
   return axios
-    .get(`https://c2ec8.sse.codesandbox.io/harvest?userId=${payload}`)
+    .get(`https://hjq696.sse.codesandbox.io/harvest?userId=${payload}`)
     .then((res) => {
       let arrdata = [];
       for (let k in res.data) {

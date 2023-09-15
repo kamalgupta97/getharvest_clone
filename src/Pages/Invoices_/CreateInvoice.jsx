@@ -168,7 +168,7 @@ export const CreateInvoice = () => {
     setIsLoading(true);
     return axios
       .get(
-        `https://gor1f.sse.codesandbox.io/expences?userId=${payload}&&projectName=${projName}`
+        `https://4k7ryd.sse.codesandbox.io/expences?userId=${payload}&&projectName=${projName}`
       )
       .then((res) => {
         setExpenseEntries(res.data);
@@ -199,7 +199,7 @@ export const CreateInvoice = () => {
     getExpenseData(userID, projName);
     getHoursData(userID, projName);
 
-    return function cleanup() {};
+    return function cleanup() { };
 
     //eslint-disable-next-line
   }, [clientname]);

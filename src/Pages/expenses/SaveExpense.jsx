@@ -36,38 +36,38 @@ const SaveExpense = ({ handleButton }) => {
   const isError = useSelector((state) => state.expense.isError);
   //const userID = useSelector(state => state.auth.uid)
   const userID = useSelector((state) => state.auth.uid);
-  const [clientObj,setClientObj]=useState([]);
+  const [clientObj, setClientObj] = useState([]);
   const ProjectDet = () => {
     // let obj=[]
     // let status=true
     // let newar=[];
-    axios.get(`https://c2ec8.sse.codesandbox.io/harvest?userId=${userID}`)
-      .then((res) => { 
-        
+    axios.get(`https://hjq696.sse.codesandbox.io/harvest?userId=${userID}`)
+      .then((res) => {
+
         // newar = obj?.filter((items)=>items.userID===userID);
         console.log(res.data);
         setClientObj(res.data);
-      
+
 
         // console.log(obj);
         // console.log(newar);
       })
       .catch((er) => console.log(er));
-   
-   
+
+
   };
   // ProjectDet();
   //eslint-disable-next-line
-  useEffect(()=>{
+  useEffect(() => {
     ProjectDet();
     //eslint-disable-next-line
-  },[])
+  }, [])
 
 
   // if (isError) {
   //   alert("Error in Uploading");
   // }
-  
+
   //const date1 = new Date().toLocaleDateString();
 
   const handleChange = (e) => {
@@ -106,7 +106,7 @@ const SaveExpense = ({ handleButton }) => {
           </p>
           {/* <option value=""></option> */}
           <select
-          
+
             placeholder="Choose a project..."
             name="projectName"
             onChange={handleChange}
@@ -120,8 +120,8 @@ const SaveExpense = ({ handleButton }) => {
                 {items}
               </option>
             ))} */}
-            {clientObj?.map((item)=>
-                                <option value={item.pname} >{item.pname}</option>)}
+            {clientObj?.map((item) =>
+              <option value={item.pname} >{item.pname}</option>)}
           </select>
           <br></br>
           <select
